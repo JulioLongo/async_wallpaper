@@ -342,8 +342,8 @@ class SetWallPaperTask extends AsyncTask<Pair<Bitmap, String>, Boolean, Boolean>
                 WallpaperManager wallpaperManager = WallpaperManager.getInstance(mContext);
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        wallpaperManager.setBitmap(pairs[0].first, null, true,
-                                WallpaperManager.FLAG_LOCK | WallpaperManager.FLAG_SYSTEM);
+                        wallpaperManager.setBitmap(pairs[0].first, null, true, WallpaperManager.FLAG_SYSTEM);
+                        wallpaperManager.setBitmap(pairs[0].first, null, true, WallpaperManager.FLAG_LOCK);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
